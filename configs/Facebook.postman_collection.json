@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "3a8d5295-07a0-42e5-8c12-1ddbca455915",
+		"_postman_id": "2c57565d-de39-4e4a-93dc-745b541ea125",
 		"name": "Facebook",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "37604997"
+		"_exporter_id": "41662644"
 	},
 	"item": [
 		{
@@ -34,7 +34,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"hrodriguez.202378@gmail.com\",\r\n    \"password\": \"Anibal_Rodrigue$3278\"\r\n}",
+							"raw": "{\r\n    \"username\": \"Harol\",\r\n    \"password\": \"Harol_Rodrigue$3278\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -56,21 +56,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1NDQ4M2UyMjY2ZjFhYzQ1OTY3YWMiLCJpYXQiOjE3Mzk5NDA4NDksImV4cCI6MTczOTk0NDQ0OX0.BLxv5VJv1DX59gV0baAi2VwGSc6TQG00tBAaRnCjRns"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2MzRiZjIwN2UxYTUzNGY1MWJmZTMiLCJpYXQiOjE3Mzk5OTY5MDMsImV4cCI6MTc0MDAwMDUwM30.Td8B30yYfQqb8b1WjUeVKpxBwh1yLSF5v8SVnq0i6W4"
 							}
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Anibal\"\r\n}",
+							"raw": "{\r\n    \"role\": \"ADIM_ROLE\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:3000/facebook/v1/user/updateProfile/67b54483e2266f1ac45967ac"
+						"url": "http://localhost:3000/facebook/v1/user/updateProfile/67b634bf207e1a534f51bfe3"
 					},
 					"response": []
 				},
@@ -134,7 +134,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1NDQ4M2UyMjY2ZjFhYzQ1OTY3YWMiLCJpYXQiOjE3Mzk5NDMwNzYsImV4cCI6MTczOTk0NjY3Nn0.epfJIZ9hnlEbX-5-whfZk_ble6EvQqaVBpsNSJi8OU0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NTY1MGFlYjg1NTQ2ZTJjNTBlZjciLCJpYXQiOjE3NDAwMDYzNDgsImV4cCI6MTc0MDAwOTk0OH0.B8EgQINzXM7PZr9b92h7D_-qB9QG2nNuxNXb-B00vmM"
 							}
 						},
 						"method": "POST",
@@ -144,27 +144,104 @@
 							"formdata": [
 								{
 									"key": "title",
-									"value": "Yo guapo",
+									"value": "Pikachu Insano",
 									"type": "text"
 								},
 								{
 									"key": "postPicture",
 									"type": "file",
-									"src": "/C:/Users/Harol/Pictures/Screenshots/Avatar-2.png"
+									"src": "/C:/Users/Informatica/Downloads/pikachu.jpg"
 								},
 								{
 									"key": "category",
-									"value": "Mi_vida",
+									"value": "67b6602e011f969f9f246ae9",
 									"type": "text"
 								},
 								{
 									"key": "content",
-									"value": "Esta es una foto animada de mi persona",
+									"value": "Foto del pikachu mas sexy del mundo",
 									"type": "text"
 								}
 							]
 						},
 						"url": "http://localhost:3000/facebook/v1/post/createPost"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Careate category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NTYyNWFlYjg1NTQ2ZTJjNTBlZjEiLCJpYXQiOjE3NDAwMDI5MDUsImV4cCI6MTc0MDAwNjUwNX0.ubS6vPkmJIwGxfMwTAi2d9OR00_-9FiR0oOiBeVgj2c"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Musica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/facebook/v1/category/createCategory"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/facebook/v1/category"
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NTYyNWFlYjg1NTQ2ZTJjNTBlZjEiLCJpYXQiOjE3NDAwMDUzODQsImV4cCI6MTc0MDAwODk4NH0.zbXy1EglRMzTeGOz3K4QYxklJw1bcNlBE_XI9_iQzHs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mascotas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/facebook/v1/category/updateCategory/67b65b3631e2d0155327b369"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NTYyNWFlYjg1NTQ2ZTJjNTBlZjEiLCJpYXQiOjE3NDAwMDUzODQsImV4cCI6MTc0MDAwODk4NH0.zbXy1EglRMzTeGOz3K4QYxklJw1bcNlBE_XI9_iQzHs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/facebook/v1/category/deleteCategory/67b65b3631e2d0155327b369"
 					},
 					"response": []
 				}
