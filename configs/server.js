@@ -8,6 +8,7 @@ import { dbConnection } from "./mongo.js"
 import { swaggerDocs, swaggerUI } from "./documentacion.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 import authRoutes from "../src/auth/auth.routes.js"
+import userRoutes from "../src/user/user.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: true }));
@@ -34,6 +35,7 @@ const middlewares = (app) => {
 
 const routes = (app) => {
     app.use("/facebook/v1/auth", authRoutes)
+    app.use("/facebook/v1/user", userRoutes)
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs))
 }
 
