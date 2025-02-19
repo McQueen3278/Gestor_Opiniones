@@ -2,14 +2,14 @@ import { Schema, model } from "mongoose";
 
 const postsSchema = Schema({
     title: {
-        type: String,
-        required: true
+        type: String
     },
     postPicture: {
         type: String,
     },
     category: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: "Category"
     },
     content: {
         type: String,

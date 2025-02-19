@@ -2,6 +2,38 @@ import { hash, verify } from "argon2";
 import User from "../user/user.model.js"
 import { generateJWT } from "../helpers/generate-jwt.js";
 
+const createAdminUser = async () => {
+    try {
+        const existingAdmin = await User.findOne({ username: "admin" });
+
+
+        if (!existingAdmin) {
+            const hashedPassword = await hash("admin");
+
+            const admin = new User({
+                name: "Admin",
+                surname: "Supermarket",
+                username: "admin",
+                email: "admin@supermarket.com",
+                password: hashedPassword,
+                role: "ADMIN_ROLE", 
+                phone: "12345678", 
+                nit: "" 
+            });
+
+   
+            await admin.save();
+            console.log("Admin creado correcaamente.");
+        } else {
+            console.log("Ya existe un administrador.");
+        }
+    } catch (error) {
+        console.error("Error al crear usuario", error);
+    }
+};
+
+export default createAdminUser;
+
 export const register = async (req, res) => {
     try {
         const data = req.body;

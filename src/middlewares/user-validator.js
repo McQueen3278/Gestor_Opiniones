@@ -62,3 +62,8 @@ export const updateProfilePictureValidator = [
     deleteFileOnError,
     handleErrors
 ]
+
+export const roleValidator = (req, res, next) =>{
+    req.body.role = "USER_ROLE";
+    next();
+}

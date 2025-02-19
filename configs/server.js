@@ -10,6 +10,8 @@ import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import postRoutes from "../src/post/post.routes.js"
+import createAdminUser from "../src/auth/auth.controller.js"
+import categoryRoutes from "../src/categories/category.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: true }));
@@ -38,6 +40,7 @@ const routes = (app) => {
     app.use("/facebook/v1/auth", authRoutes)
     app.use("/facebook/v1/user", userRoutes)
     app.use("/facebook/v1/post", postRoutes)
+    app.use("/facebook/v1/category", categoryRoutes)
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs))
 }
 
@@ -53,6 +56,7 @@ const conectarDB = async () =>{
 export const initServer = () => {
     const app = express()
     try{
+        createAdminUser()
         middlewares(app)
         conectarDB()
         routes(app)

@@ -23,10 +23,12 @@ export const createPost = async (req, res) => {
 
         await post.save();
 
+        const populatedPost = await  Post.findById(post._id).populate('user', 'name')
+
         res.status(201).json({
             success: true,
             message: "Publicación creada",
-            post
+            populatedPost
         })
 
     }catch(err){
@@ -38,4 +40,9 @@ export const createPost = async (req, res) => {
     }
     
 }
+
+
+
+
+
 

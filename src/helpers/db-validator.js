@@ -21,3 +21,10 @@ export const userExists = async (uid = " ") => {
     }
 }
 
+export const categoryExists = async (name = "") => {
+    const existe = await User.findById(name)
+    if(existe){
+        throw new Error(`La categoria ${name} ya existe`)
+    }
+}
+
