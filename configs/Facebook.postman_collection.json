@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "3a8d5295-07a0-42e5-8c12-1ddbca455915",
+		"name": "Facebook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37604997"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Harol\",\r\n    \"surname\": \"Rodriguez\",\r\n    \"username\": \"Harol\",\r\n    \"password\": \"Harol_Rodrigue$3278\",\r\n    \"email\": \"hrodriguez.202378@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/facebook/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hrodriguez.202378@gmail.com\",\r\n    \"password\": \"Anibal_Rodrigue$3278\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/facebook/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1NDQ4M2UyMjY2ZjFhYzQ1OTY3YWMiLCJpYXQiOjE3Mzk5NDA4NDksImV4cCI6MTczOTk0NDQ0OX0.BLxv5VJv1DX59gV0baAi2VwGSc6TQG00tBAaRnCjRns"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anibal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/facebook/v1/user/updateProfile/67b54483e2266f1ac45967ac"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1NDQ4M2UyMjY2ZjFhYzQ1OTY3YWMiLCJpYXQiOjE3Mzk5NDA4NDksImV4cCI6MTczOTk0NDQ0OX0.BLxv5VJv1DX59gV0baAi2VwGSc6TQG00tBAaRnCjRns"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"Haroll_Rodrigue$3278\",\r\n    \"newPassword\": \"Anibal_Rodrigue$3278\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/facebook/v1/user/updatePassword/67b54483e2266f1ac45967ac"
+					},
+					"response": []
+				},
+				{
+					"name": "Update PP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1NDQ4M2UyMjY2ZjFhYzQ1OTY3YWMiLCJpYXQiOjE3Mzk5MzY4MTIsImV4cCI6MTczOTk0MDQxMn0.UUOod33HB4q36C_yomeorMX-yjTpDG41fPmerIrnii8"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Harol/Pictures/Screenshots/Avatar 1.png"
+								}
+							]
+						},
+						"url": "http://localhost:3000/facebook/v1/user/updateProfilePicture/67b54483e2266f1ac45967ac"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1NDQ4M2UyMjY2ZjFhYzQ1OTY3YWMiLCJpYXQiOjE3Mzk5NDMwNzYsImV4cCI6MTczOTk0NjY3Nn0.epfJIZ9hnlEbX-5-whfZk_ble6EvQqaVBpsNSJi8OU0"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Yo guapo",
+									"type": "text"
+								},
+								{
+									"key": "postPicture",
+									"type": "file",
+									"src": "/C:/Users/Harol/Pictures/Screenshots/Avatar-2.png"
+								},
+								{
+									"key": "category",
+									"value": "Mi_vida",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Esta es una foto animada de mi persona",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:3000/facebook/v1/post/createPost"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
