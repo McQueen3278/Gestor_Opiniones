@@ -1,8 +1,8 @@
 import { body, param } from "express-validator";
-import { emailExists, usernameExists, userExists } from "../helpers/db-validator";
-import { validarCampos } from "./validar-campos";
-import { deleteFileOnError } from "./delete-file-on-error";
-import { handleErrors } from "./handleErrors";
+import { emailExists, usernameExists, userExists } from "../helpers/db-validator.js";
+import { validarCampos } from "./validar-campos.js";
+import { deleteFileOnError } from "./delete-file-on-error.js";
+import { handleErrors } from "./handleErrors.js";
 
 export const registerValidator = [
     body("name").notEmpty().withMessage("El nombre es requerido"),

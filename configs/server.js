@@ -6,6 +6,8 @@ import helmet from "helmet"
 import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
 import { swaggerDocs, swaggerUI } from "./documentacion.js"
+import apiLimiter from "../src/middlewares/rate-limit-validator.js"
+import authRoutes from "../src/auth/auth.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: true }));
@@ -26,10 +28,12 @@ const middlewares = (app) => {
             },
         },
     }));
-    app.use(morgan("dev"))
+    app.use(morgan("dev")),
+    app.use(apiLimiter)
 }
 
 const routes = (app) => {
+    app.use("/facebook/v1/auth", authRoutes)
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs))
 }
 
