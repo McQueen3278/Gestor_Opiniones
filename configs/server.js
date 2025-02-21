@@ -13,6 +13,7 @@ import postRoutes from "../src/post/post.routes.js"
 import createAdminUser from "../src/auth/auth.controller.js"
 import categoryRoutes from "../src/categories/category.routes.js"
 import createDCategory from "../src/categories/category.controller.js"
+import commentRoutes from "../src/comments/comment.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: true }));
@@ -42,6 +43,7 @@ const routes = (app) => {
     app.use("/facebook/v1/user", userRoutes)
     app.use("/facebook/v1/post", postRoutes)
     app.use("/facebook/v1/category", categoryRoutes)
+    app.use("/facebook/v1/comments", commentRoutes)
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs))
 }
 

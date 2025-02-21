@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "2c57565d-de39-4e4a-93dc-745b541ea125",
+		"_postman_id": "494b1798-55f6-4388-aece-7daf51de33c6",
 		"name": "Facebook",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "41662644"
+		"_exporter_id": "37604997"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Harol\",\r\n    \"surname\": \"Rodriguez\",\r\n    \"username\": \"Harol\",\r\n    \"password\": \"Harol_Rodrigue$3278\",\r\n    \"email\": \"hrodriguez.202378@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Saul\",\r\n    \"surname\": \"Donnis\",\r\n    \"username\": \"Sdonnis\",\r\n    \"password\": \"Saul_Rodrigue$3278\",\r\n    \"email\": \"sdonnis.202378@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -34,7 +34,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Harol\",\r\n    \"password\": \"Harol_Rodrigue$3278\"\r\n}",
+							"raw": "{\r\n    \"username\": \"Sdonnis\",\r\n    \"password\": \"Saul_Rodrigue$3278\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -56,21 +56,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2MzRiZjIwN2UxYTUzNGY1MWJmZTMiLCJpYXQiOjE3Mzk5OTY5MDMsImV4cCI6MTc0MDAwMDUwM30.Td8B30yYfQqb8b1WjUeVKpxBwh1yLSF5v8SVnq0i6W4"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4MDkzMmJmZGNlOWNhM2Y1ZDg2ZGYiLCJpYXQiOjE3NDAxMTU0MTgsImV4cCI6MTc0MDExOTAxOH0.aS8-jP2KKsL1y-VNSMRWsr7ixdxDKs2t5I0jUJJSBNM"
 							}
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"role\": \"ADIM_ROLE\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Anibal\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:3000/facebook/v1/user/updateProfile/67b634bf207e1a534f51bfe3"
+						"url": "http://localhost:3000/facebook/v1/user/updateProfile"
 					},
 					"response": []
 				},
@@ -80,21 +80,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1NDQ4M2UyMjY2ZjFhYzQ1OTY3YWMiLCJpYXQiOjE3Mzk5NDA4NDksImV4cCI6MTczOTk0NDQ0OX0.BLxv5VJv1DX59gV0baAi2VwGSc6TQG00tBAaRnCjRns"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4MDkzMmJmZGNlOWNhM2Y1ZDg2ZGYiLCJpYXQiOjE3NDAxMTQzMzEsImV4cCI6MTc0MDExNzkzMX0.FsIhtYE9O0cHgKpKgJwA1o5mX9IrzDffPzHNr2Rk2NE"
 							}
 						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\": \"Haroll_Rodrigue$3278\",\r\n    \"newPassword\": \"Anibal_Rodrigue$3278\"\r\n}",
+							"raw": "{\r\n    \"password\": \"Harol_Rodrigue$3278\",\r\n    \"newPassword\": \"Anibal_Rodrigue$3278\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:3000/facebook/v1/user/updatePassword/67b54483e2266f1ac45967ac"
+						"url": "http://localhost:3000/facebook/v1/user/updatePassword"
 					},
 					"response": []
 				},
@@ -104,7 +104,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1NDQ4M2UyMjY2ZjFhYzQ1OTY3YWMiLCJpYXQiOjE3Mzk5MzY4MTIsImV4cCI6MTczOTk0MDQxMn0.UUOod33HB4q36C_yomeorMX-yjTpDG41fPmerIrnii8"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4MDkzMmJmZGNlOWNhM2Y1ZDg2ZGYiLCJpYXQiOjE3NDAxMTg1MTUsImV4cCI6MTc0MDEyMjExNX0.ED71WmYgIcyg2LKO8BfSS9GLM-sJQBuUzheT4gRCawQ"
 							}
 						},
 						"method": "PATCH",
@@ -115,11 +115,11 @@
 								{
 									"key": "profilePicture",
 									"type": "file",
-									"src": "/C:/Users/Harol/Pictures/Screenshots/Avatar 1.png"
+									"src": "/C:/Users/Harol/Pictures/Screenshots/Avatar-2.png"
 								}
 							]
 						},
-						"url": "http://localhost:3000/facebook/v1/user/updateProfilePicture/67b54483e2266f1ac45967ac"
+						"url": "http://localhost:3000/facebook/v1/user/updateProfilePicture"
 					},
 					"response": []
 				}
@@ -134,7 +134,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NTY1MGFlYjg1NTQ2ZTJjNTBlZjciLCJpYXQiOjE3NDAwMDYzNDgsImV4cCI6MTc0MDAwOTk0OH0.B8EgQINzXM7PZr9b92h7D_-qB9QG2nNuxNXb-B00vmM"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4Mzc0YWFkODRkMTMzM2I0MmUyODciLCJpYXQiOjE3NDAxMjYwNDYsImV4cCI6MTc0MDEyOTY0Nn0.RGZvvO1A3XGcHdLxlUq7mSEdYWnM4VOcW_Gr55r-yGo"
 							}
 						},
 						"method": "POST",
@@ -144,27 +144,76 @@
 							"formdata": [
 								{
 									"key": "title",
-									"value": "Pikachu Insano",
+									"value": "Mi foto",
 									"type": "text"
 								},
 								{
 									"key": "postPicture",
 									"type": "file",
-									"src": "/C:/Users/Informatica/Downloads/pikachu.jpg"
+									"src": "/C:/Users/Harol/Pictures/Screenshots/Avatar 1.png"
 								},
 								{
 									"key": "category",
-									"value": "67b6602e011f969f9f246ae9",
+									"value": "67b836475a1fb06c667de799",
 									"type": "text"
 								},
 								{
 									"key": "content",
-									"value": "Foto del pikachu mas sexy del mundo",
+									"value": "Foto pa las babys",
 									"type": "text"
 								}
 							]
 						},
 						"url": "http://localhost:3000/facebook/v1/post/createPost"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4MzUwZTM4MDZkNjk4NmU3M2M1ZTMiLCJpYXQiOjE3NDAxMjU0NjQsImV4cCI6MTc0MDEyOTA2NH0.AMKJRTpsGaam4mgq1wuI8b6uL76Q9bcO41w7QoTM1FM"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "postPicture",
+									"type": "file",
+									"src": "/C:/Users/Harol/Pictures/Screenshots/Captura de pantalla 2025-02-15 014823.png"
+								}
+							]
+						},
+						"url": "http://localhost:3000/facebook/v1/post/updatePost/67b835d05a1fb06c667de783"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4MDkzMmJmZGNlOWNhM2Y1ZDg2ZGYiLCJpYXQiOjE3NDAxMTk1NzAsImV4cCI6MTc0MDEyMzE3MH0.vOi64toORi0mm0TaIWL4UIZ39WEetYDmvU90uYF0k2A"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/facebook/v1/post/deletePost/67b80dea7737154f7eff92d3"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/facebook/v1/post/postByCategory"
 					},
 					"response": []
 				}
@@ -179,7 +228,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NTYyNWFlYjg1NTQ2ZTJjNTBlZjEiLCJpYXQiOjE3NDAwMDI5MDUsImV4cCI6MTc0MDAwNjUwNX0.ubS6vPkmJIwGxfMwTAi2d9OR00_-9FiR0oOiBeVgj2c"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4MzUwOTM4MDZkNjk4NmU3M2M1ZGUiLCJpYXQiOjE3NDAxMjU3NDEsImV4cCI6MTc0MDEyOTM0MX0.TuK8yccMkVrtBJvUolVgQ7O90ou06WXRQUPs3LhnUIA"
 							}
 						},
 						"method": "POST",
@@ -236,12 +285,80 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NTYyNWFlYjg1NTQ2ZTJjNTBlZjEiLCJpYXQiOjE3NDAwMDUzODQsImV4cCI6MTc0MDAwODk4NH0.zbXy1EglRMzTeGOz3K4QYxklJw1bcNlBE_XI9_iQzHs"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3ZjNjOTBjNDAxZDJmNjlkMjhiYjUiLCJpYXQiOjE3NDAxMjE2NTYsImV4cCI6MTc0MDEyNTI1Nn0.hV2AZQ6Act5_Vaz35jKC-8uESqTbM0E8KGpR7fL-7Dg"
 							}
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:3000/facebook/v1/category/deleteCategory/67b65b3631e2d0155327b369"
+						"url": "http://localhost:3000/facebook/v1/category/deleteCategory/67b80d310c40f5b793bf2f84"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Add Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4Mzc0YWFkODRkMTMzM2I0MmUyODciLCJpYXQiOjE3NDAxMjYwNDYsImV4cCI6MTc0MDEyOTY0Nn0.RGZvvO1A3XGcHdLxlUq7mSEdYWnM4VOcW_Gr55r-yGo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"Muy feo y aburrido\",\r\n    \"postId\": \"67b837c0ad84d1333b42e28b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/facebook/v1/comments/addComment"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4Mzc0YWFkODRkMTMzM2I0MmUyODciLCJpYXQiOjE3NDAxMjYwNDYsImV4cCI6MTc0MDEyOTY0Nn0.RGZvvO1A3XGcHdLxlUq7mSEdYWnM4VOcW_Gr55r-yGo"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"Muy bonito\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/facebook/v1/comments/updateComment/67b843489e7df0b66e4620df"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4Mzc0YWFkODRkMTMzM2I0MmUyODciLCJpYXQiOjE3NDAxMjk3NzIsImV4cCI6MTc0MDEzMzM3Mn0.ZkqpfkOedzhCQapoNT9Zqi7G5dChiP_r7H4mOBFpNKE"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/facebook/v1/comments/deleteComment/67b843489e7df0b66e4620df"
 					},
 					"response": []
 				}

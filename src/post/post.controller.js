@@ -136,7 +136,17 @@ export const deletePost = async (req, res) => {
 
 export const getPostsByCategory = async (req, res) => {
     try {
-        const posts = await Post.find().populate('user', 'name').populate('category', 'name'); 
+        const posts = await Post.find()
+            .populate('user', 'name')
+            .populate('category', 'name')
+            .populate({
+                path: 'comments',
+                populate: {
+                    path: 'user',
+                    select: 'name'
+                }
+            });
+
         return res.status(200).json({
             success: true,
             total: posts.length,

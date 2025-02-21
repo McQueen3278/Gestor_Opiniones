@@ -12,13 +12,12 @@ const createAdminUser = async () => {
 
             const admin = new User({
                 name: "Admin",
-                surname: "Supermarket",
+                surname: "Facebook",
                 username: "admin",
-                email: "admin@supermarket.com",
+                email: "admin@facebook.com",
                 password: hashedPassword,
                 role: "ADMIN_ROLE", 
-                phone: "12345678", 
-                nit: "" 
+                phone: "12345678"
             });
 
    
