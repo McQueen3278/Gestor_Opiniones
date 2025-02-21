@@ -101,3 +101,24 @@ export const updatePost = async (req, res) => {
 };
 
 
+export const deletePost = async (req, res) => {
+  try {
+      const { pid } = req.params;
+
+      const post = await Post.findByIdAndUpdate(pid,{ status: false },{ new: true });
+
+
+      return res.status(200).json({
+          success: true,
+          message: "Categoría eliminada correctamente",
+          post
+      });
+
+  } catch (err) {
+      return res.status(500).json({
+          success: false,
+          message: "Error al eliminar la categoría",
+          error: err.message
+      });
+  }
+};

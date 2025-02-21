@@ -26,3 +26,12 @@ export const updatePostValidator = [
     deleteFileOnError,
     handleErrors
 ]
+
+export const deletePostValidator = [
+    validateJWT,
+    hasRoles("USER_ROLE"),
+    param("pid").isMongoId().withMessage("No es un ID válido de MongoDB"),
+    param("pid").custom(postExists),
+    validarCampos,
+    handleErrors
+]
