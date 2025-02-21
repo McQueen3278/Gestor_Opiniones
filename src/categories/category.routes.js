@@ -9,7 +9,7 @@ router.post("/createCategory", createCategoryValidator ,createCategory)
 
 router.get("/", getCategories)
 
-router.put("/updateCategory/:cid", updateCategoryValidator, updateCategory)
+router.put("/updateCategory", updateCategoryValidator, updateCategory)
 
 router.delete("/deleteCategory/:cid", deleteCategoryValidator, deleteCategory)
 

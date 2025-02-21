@@ -1,4 +1,5 @@
 import User from "../user/user.model.js"
+import Post from "../post/post.model.js"
 
 export const emailExists = async (email = "") => {
     const existe = await User.findOne({email})
@@ -28,3 +29,9 @@ export const categoryExists = async (name = "") => {
     }
 }
 
+export const postExists = async (pid = "") => {
+    const existe = await Post.findById(pid);
+    if (!existe) {
+        throw new Error(`No existe la publicación con el ID proporcionado`);
+    }
+};

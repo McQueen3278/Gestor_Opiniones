@@ -16,8 +16,6 @@ export const createCategoryValidator = [
 export const updateCategoryValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
-    param("cid").isMongoId().withMessage("No es un ID válido de MongoDB"),
-    param("cid").custom(categoryExists),
     body("name").notEmpty().withMessage("El nombre es requerido"),
     validarCampos,
     handleErrors

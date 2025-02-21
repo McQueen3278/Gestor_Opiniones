@@ -26,4 +26,10 @@ const postsSchema = Schema({
     timeStamps: true
 })
 
+postsSchema.methods.toJSON = function(){
+    const {_id, ...post} = this.toObject()
+    post.pid = _id
+    return post
+}
+
 export default model("Post", postsSchema)
