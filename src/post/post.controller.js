@@ -3,11 +3,12 @@ import fs from "fs/promises"
 import { join, dirname } from "path"
 import { fileURLToPath } from "url"
 import path from "path"
+import Category from "../categories/category.model.js"
 
 export const createPost = async (req, res) => {
-    try{
-        const data = req.body
-        const user = req.usuario
+    try {
+        const data = req.body;
+        const user = req.usuario;
 
         let postPicture = req.file ? req.file.filename : null;
 
@@ -18,31 +19,42 @@ export const createPost = async (req, res) => {
             });
         }
 
-        data.postPicture = postPicture
+        if (!data.category) {
+            const sinCategoria = await Category.findOne({ name: "sin_categoria" });
+
+            if (!sinCategoria) {
+                return res.status(404).json({
+                    success: false,
+                    message: "La categoría 'sin_categoria' no existe",
+                });
+            }
+            data.category = sinCategoria._id;
+        }
+
+        data.postPicture = postPicture;
         const post = new Post({
             ...data,
             user: user._id
-        })
+        });
 
         await post.save();
 
-        const populatedPost = await  Post.findById(post._id).populate('user', 'name')
+        const populatedPost = await Post.findById(post._id).populate('user', 'name').populate('category', 'name');
 
         res.status(201).json({
             success: true,
             message: "Publicación creada",
             populatedPost
-        })
+        });
 
-    }catch(err){
+    } catch (err) {
         res.status(500).json({
-             success: false, 
-             message: "Error al hacer publicación", 
-             error: err.message 
-         })
+            success: false,
+            message: "Error al hacer publicación",
+            error: err.message
+        });
     }
-    
-}
+};
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 export const updatePost = async (req, res) => {
