@@ -7,7 +7,7 @@ const swaggerOptions = {
         info:{
             title: "Gestor_de_opiniones API",
             version:"1.0.0",
-            description: "API para sistema de supermercado",
+            description: "API para sistema de gestion de opiniones",
             contact:{
                 name: "Harol Rodriguez",
                 email: "hrodriguez-2023278@kinal.edu.gt"
@@ -23,8 +23,8 @@ const swaggerOptions = {
         "./src/auth/*.js",
         "./src/user/*.js",
         "./src/categories/*.js",
-        "/src/post/*.js",
-        "/src/comments/*.js"
+        "./src/post/*.js",
+        "./src/comments/*.js"
         
     ]
 }

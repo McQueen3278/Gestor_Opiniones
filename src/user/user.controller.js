@@ -5,6 +5,42 @@ import { dirname } from "path"
 import { fileURLToPath } from "url"
 import path from "path";
 
+/**
+ * @swagger
+ * tags:
+ *   name: User
+ *   description: User profile management
+ */
+
+/**
+ * @swagger
+ * /user/updateProfile:
+ *   put:
+ *     summary: Update user profile
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               surname:
+ *                 type: string
+ *               username:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               phone:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: User updated
+ *       500:
+ *         description: Error updating user
+ */
 export const updateProfile = async (req, res) => {
     try {
         const usuario = req.usuario;
@@ -26,6 +62,35 @@ export const updateProfile = async (req, res) => {
     }
 }
 
+/**
+ * @swagger
+ * /user/updatePassword:
+ *   put:
+ *     summary: Update user password
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               password:
+ *                 type: string
+ *               newPassword:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Password updated
+ *       400:
+ *         description: New password cannot be the same as the old password
+ *       401:
+ *         description: Incorrect password
+ *       404:
+ *         description: User not found
+ *       500:
+ *         description: Error updating password
+ */
 export const updatePassword = async (req, res) => {
     try {
         const usuario = req.usuario;
@@ -77,6 +142,32 @@ export const updatePassword = async (req, res) => {
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
+/**
+ * @swagger
+ * /user/updateProfilePicture:
+ *   put:
+ *     summary: Update user profile picture
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               profilePicture:
+ *                 type: string
+ *                 format: binary
+ *     responses:
+ *       200:
+ *         description: Profile picture updated
+ *       400:
+ *         description: No file in request
+ *       404:
+ *         description: User not found
+ *       500:
+ *         description: Error updating profile picture
+ */
 export const updateProfilePicture = async (req, res) => {
     try {
         const usuario = req.usuario; 
