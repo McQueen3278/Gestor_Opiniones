@@ -12,6 +12,7 @@ import userRoutes from "../src/user/user.routes.js"
 import postRoutes from "../src/post/post.routes.js"
 import createAdminUser from "../src/auth/auth.controller.js"
 import categoryRoutes from "../src/categories/category.routes.js"
+import createDCategory from "../src/categories/category.controller.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: true }));
@@ -57,6 +58,7 @@ export const initServer = () => {
     const app = express()
     try{
         createAdminUser()
+        createDCategory()
         middlewares(app)
         conectarDB()
         routes(app)

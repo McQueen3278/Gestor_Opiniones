@@ -1,4 +1,30 @@
 import Category from "./category.model.js"
+import Post from "../post/post.model.js"
+
+const createDCategory = async () => {
+  try {
+      const categoryName = "sin_categoria".toLowerCase();
+
+      const existingCategory = await Category.findOne({ name: categoryName });
+
+      if (!existingCategory) {
+          const category = new Category({
+              name: categoryName,
+          });
+
+          await category.save();
+          console.log("Categoría creada correctamente");
+
+      } else {
+          console.log("La categoría ya existe");
+      }
+
+  } catch (err) {
+      console.error("Error al crear categoría:", err);
+  }
+}
+
+export default createDCategory;
 
 export const createCategory = async (req, res) => {
   try {
@@ -75,22 +101,43 @@ export const deleteCategory = async (req, res) => {
   try {
       const { cid } = req.params;
 
+      await createDCategory();
 
+      const deletedCategory = await Category.findByIdAndUpdate(cid, { status: false }, { new: true });
 
-      const categorie = await Category.findByIdAndUpdate(cid,{ status: false },{ new: true });
+      if (!deletedCategory) {
+          return res.status(404).json({
+              success: false,
+              message: "Categoría no encontrada",
+          });
+      }
+
+      const sinCategoria = await Category.findOne({ name: "sin_categoria" });
+
+      if (!sinCategoria) {
+          return res.status(404).json({
+              success: false,
+              message: "La categoría 'sin_categoria' no existe",
+          });
+      }
+ 
+      const result = await Post.updateMany(
+          { category: cid },
+          { category: sinCategoria._id }
+      );
 
 
       return res.status(200).json({
           success: true,
-          message: "Categoría eliminada correctamente",
-          categorie
+          message: "Categoría eliminada correctamente, posts actualizados a 'sin_categoria'",
       });
 
   } catch (err) {
+      console.error("Error al eliminar la categoría:", err);
       return res.status(500).json({
           success: false,
           message: "Error al eliminar la categoría",
-          error: err.message
+          error: err.message,
       });
   }
 };
